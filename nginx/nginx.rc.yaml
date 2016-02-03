@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: nginx
+  labels:
+    name: nginx
+    app: nectar
+    tier: frontend
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        role: proxy
+        app: nectar
+        tier: frontend
+    spec:
+      containers:
+        - name: nginx
+          image: gcr.io/kolibri-nectar/nginx:latest
+          ports:
+            - name: proxy-http
+              containerPort: 80
+            - name: proxy-https
+              containerPort: 443

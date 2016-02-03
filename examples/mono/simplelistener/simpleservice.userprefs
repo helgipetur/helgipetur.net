@@ -1,0 +1,15 @@
+﻿<Properties StartupItem="simplelistener.csproj" RefactoringSettings.EnableRefactorings="True">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Test.cs">
+    <Files>
+      <File FileName="Service.cs" Line="42" Column="1" />
+      <File FileName="Test.cs" Line="28" Column="2" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/home/hogni/Documents/Nectar/examples/mono/simplelistener/TestSimpleListener.cs" line="37" column="33" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

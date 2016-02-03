@@ -1,0 +1,12 @@
+{
+    "AvailabilityZone": "eu-west-1c", 
+    "Encrypted": false, 
+    "VolumeType": "gp2", 
+    "VolumeId": "vol-9e4b755d", 
+    "State": "creating", 
+    "Iops": 30, 
+    "SnapshotId": "", 
+    "CreateTime": "2015-12-05T14:28:15.938Z", 
+    "Size": 10
+}
+

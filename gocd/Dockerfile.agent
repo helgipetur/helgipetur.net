@@ -1,0 +1,9 @@
+FROM gocd/gocd-agent
+
+USER root
+
+RUN echo "go ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/go
+
+RUN apt-get update && apt-get install -yqq build-essential
+
+ADD gocd-agent/go-agent-start.sh /etc/service/go-agent/run

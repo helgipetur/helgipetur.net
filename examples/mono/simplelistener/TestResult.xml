@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="/home/hogni/Documents/Nectar/examples/mono/simplelistener/bin/Debug/simplelistener_tests.dll" total="1" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-11-30" time="11:12:55">
+  <environment nunit-version="2.6.3.0" clr-version="4.0.30319.17020" os-version="Unix 4.2.0.18" platform="Unix" cwd="/home/hogni/Documents/Nectar/examples/mono/simplelistener" machine-name="mcjunk-gnome" user="hogni" user-domain="mcjunk-gnome" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite type="Assembly" name="/home/hogni/Documents/Nectar/examples/mono/simplelistener/bin/Debug/simplelistener_tests.dll" executed="True" result="Success" success="True" time="0.322" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="simplelistener_tests" executed="True" result="Success" success="True" time="0.319" asserts="0">
+        <results>
+          <test-suite type="TestFixture" name="Test" executed="True" result="Success" success="True" time="0.319" asserts="0">
+            <results>
+              <test-case name="simplelistener_tests.Test.ShouldReturnOkOnRoot" executed="True" result="Success" success="True" time="0.316" asserts="0" />
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

@@ -1,0 +1,48 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: jenkins
+  labels:
+    name: jenkins
+    tier: backend
+spec:
+  replicas: 1
+  selector:
+    name: jenkins
+  template:
+    metadata:
+      labels:
+        name: jenkins
+        tier: backend
+    spec:
+      containers:
+        - name: jenkins
+          image: gcr.io/kolibri-nectar/jenkins:latest
+          ports:
+            - containerPort: 8080
+              name: jenkins
+          volumeMounts:
+              # This name must match the volumes.name below.
+            - name: jenkins-persistent-storage
+              mountPath: /var/jenkins_home
+            - name: docker-binary
+              mountPath: /usr/bin/docker
+            - name: docker-socket
+              mountPath: /var/run/docker.sock
+            - name: docker-libs
+              mountPath: /var/lib/docker
+      volumes:
+        - name: jenkins-persistent-storage
+          gcePersistentDisk:
+            # This disk must already exist.
+            pdName: nectar-jenkins-data
+            fsType: ext4
+        - name: docker-binary
+          hostPath: 
+            path: /usr/bin/docker
+        - name: docker-socket
+          hostPath: 
+            path: /var/run/docker.sock
+        - name: docker-libs
+          hostPath:
+            path: /var/lib/docker

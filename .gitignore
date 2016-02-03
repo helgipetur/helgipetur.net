@@ -1,0 +1,6 @@
+kubernetes/
+scratch/
+nginx/.htpasswd
+examples/mono/simplelistener/bin/
+examples/mono/simplelistener/obj/
+examples/mono/simplelistener/packages/

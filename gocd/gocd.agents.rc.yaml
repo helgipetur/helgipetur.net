@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: go-agent
+  labels:
+    name: go-agent
+    tier: backend
+spec:
+  replicas: 1
+  selector:
+    name: go-agent
+  template:
+    metadata:
+      labels:
+        name: go-agent
+        tier: backend
+    spec:
+      imagePullSecrets:
+        - name: registry-secret
+      containers:
+        - name: go-agent
+          volumeMounts:
+              # This name must match the volumes.name below.
+            - name: docker-binary
+              mountPath: /usr/bin/docker
+            - name: docker-socket
+              mountPath: /var/run/docker.sock
+          env:
+          - name: AGENT_KEY
+            value: HithereKolibriWasHer3
+          image: nectar-registry.kolibri.is/kolibri-nectar/gocd-agent:latest
+      volumes:
+        - name: docker-binary
+          hostPath: 
+            path: /usr/bin/docker
+        - name: docker-socket
+          hostPath: 
+            path: /var/run/docker.sock

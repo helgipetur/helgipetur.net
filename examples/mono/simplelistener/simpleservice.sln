@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "simplelistener", "simplelistener.csproj", "{307A97C1-DA92-40E3-B69F-70321A58C838}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "simpleservice", "simpleservice.csproj", "{F0D89EC9-A16A-41B9-8B0D-21657E7EC7B1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{307A97C1-DA92-40E3-B69F-70321A58C838}.Debug|x86.ActiveCfg = Debug|x86
+		{307A97C1-DA92-40E3-B69F-70321A58C838}.Debug|x86.Build.0 = Debug|x86
+		{307A97C1-DA92-40E3-B69F-70321A58C838}.Release|x86.ActiveCfg = Release|x86
+		{307A97C1-DA92-40E3-B69F-70321A58C838}.Release|x86.Build.0 = Release|x86
+		{F0D89EC9-A16A-41B9-8B0D-21657E7EC7B1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F0D89EC9-A16A-41B9-8B0D-21657E7EC7B1}.Debug|x86.Build.0 = Debug|Any CPU
+		{F0D89EC9-A16A-41B9-8B0D-21657E7EC7B1}.Release|x86.ActiveCfg = Release|Any CPU
+		{F0D89EC9-A16A-41B9-8B0D-21657E7EC7B1}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,47 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: nectar-proxy
+  labels:
+    app: nectar
+    tier: frontend
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: nectar-proxy
+      labels:
+        app: nectar
+        tier: frontend
+    spec:
+      imagePullSecrets:
+        - name: registry-secret
+      containers:
+        - name: nginx
+          image: nectar-registry.kolibri.is/nectar/nginx-proxy:latest
+          imagePullPolicy: Always
+          ports:
+            - name: proxy-http
+              containerPort: 80
+            - name: proxy-https
+              containerPort: 443
+          volumeMounts:
+            - name: secrets-volume-nectar-kolibri-is
+              readOnly: true
+              mountPath: "/etc/nginx/secrets/nectar.kolibri.is"
+            - name: secrets-volume-nectar-cd-kolibri-is
+              readOnly: true
+              mountPath: "/etc/nginx/secrets/nectar-cd.kolibri.is"
+            - name: secrets-volume-nectar-ci-kolibri-is
+              readOnly: true
+              mountPath: "/etc/nginx/secrets/nectar-ci.kolibri.is"
+      volumes:
+        - name: secrets-volume-nectar-kolibri-is
+          secret:
+            secretName: ssl-secrets-nectar-kolibri-is
+        - name: secrets-volume-nectar-cd-kolibri-is
+          secret:
+            secretName: ssl-secrets-nectar-cd-kolibri-is
+        - name: secrets-volume-nectar-ci-kolibri-is
+          secret:
+            secretName: ssl-secrets-nectar-ci-kolibri-is

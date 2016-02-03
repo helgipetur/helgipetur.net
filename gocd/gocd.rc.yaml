@@ -1,0 +1,47 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: go-server
+  labels:
+    name: go-server
+    tier: backend
+spec:
+  replicas: 1
+  selector:
+    name: go-server
+  template:
+    metadata:
+      labels:
+        name: go-server
+        tier: backend
+    spec:
+      containers:
+        - name: gocd
+          image: gocd/gocd-server
+          ports:
+            - containerPort: 8153
+              name: gocd
+            - containerPort: 8154
+              name: gocd-agents
+          env:
+          - name: AGENT_KEY
+            value: HithereKolibriWasHer3
+          - name: MSG_TIME
+            value: "0"
+          volumeMounts:
+              # This name must match the volumes.name below.
+            - name: gocd-persistent-storage
+              mountPath: /var/lib/go-server
+            - name: gocd-persistent-config
+              mountPath: /etc/go
+      volumes:
+        - name: gocd-persistent-storage
+          gcePersistentDisk:
+            # This disk must already exist.
+            pdName: nectar-gocd-data
+            fsType: ext4
+        - name: gocd-persistent-config
+          gcePersistentDisk:
+            # This disk must already exist.
+            pdName: nectar-gocd-data-config
+            fsType: ext4

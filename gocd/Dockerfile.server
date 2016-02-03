@@ -1,0 +1,3 @@
+FROM gocd/gocd-server
+
+USER root
